@@ -51,43 +51,38 @@ p {
 <main>
 <div>
 
-  <h1>TripCaster</h1>    
+<h1>TripCaster</h1>
+        
         <form action="demo_form.asp">
             <p>Starting point: <input type="text" name="Start"><br></p>
             <p>Destination: <input type="text" name="Finish"><br></p>
             <p><input type="submit" value="Submit"></p>
         </form>
 
-        <div id='map'></div>
-
-    <script src="http://openlayers.org/api/OpenLayers.js">
-      var map = new ol.Map({
-
-        layers: [
-          new ol.layer.Tile({source: new ol.source.OSM()})
-        ]
-        view: new ol.View({
-          center: [0, 0];
-          zoom: 2;
-        }),
-
-        target: 'map'
-      });
-
-      var layer_precipitation = new OpenLayers.Layer.XYZ(
-        "precipitation",
-        "http://${s}.tile.openweathermap.org/map/precipitation/${z}/${x}/${y}.png",
-        {
-          isBaseLayer: false,
-          opacity: 0.7,
-          sphericalMercator: true
-        }
-      );
-
-      map.addLayer(layer_precipitation);
-    </script>
 </main>
 </div>
 
 </body>
 </html>
+<!--
+
+    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
+    [::::::::::::::      ::::::::::::::]
+    [::::::::::::::      ::::::::::::::]
+    [::::::[[[[[[[:      :]]]]]]]::::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[     CODE THE WEB     ]:::::]
+    [:::::[  http://brackets.io  ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [::::::[[[[[[[:      :]]]]]]]::::::]
+    [::::::::::::::      ::::::::::::::]
+    [::::::::::::::      ::::::::::::::]
+    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
+
+-->
