@@ -2,76 +2,80 @@
 <html>
 <head>
 
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
 
-<script>
-var myCenter=new google.maps.LatLng(40.1947, -92.5833);
+    <script>
+        var myCenter=new google.maps.LatLng(40.1947, -92.5833);
 
-function initialize()
-{
-    var mapProp = {
-      center:myCenter,
-      zoom:5,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    var marker=new google.maps.Marker({
-      position:myCenter,
-      });
-    marker.setMap(map);
-}
+        function initialize()
+        {
+            var mapProp = {
+                center:myCenter,
+                zoom:5,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker=new google.maps.Marker({
+                position:myCenter,
+            });
+        marker.setMap(map);
+        }
 
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
-<style>
-    body {
-        background-color: #eeeeee;
-    }
-    h1 {
-        font-family: "Trebuchet MS";
-        color: black;
-        text-align: center;
-    }
-    p {
-        font-family: "Trebuchet MS";
-        font-size: 14px;
-        text-align: center;
-    }
-    #sidebar {
-        position:absolute;
-        top: 35%;
-        left: 5px;
-        line-height: 20px;
-        height: 50%;
-        width: 20%;
-        min-width: 275px;
-        float: left;
-        padding: 5px;
-    }
-    #googleMap {
-        position: absolute;
-        top: 5px;
-        left: 300px;
-        height: 98vh;
-        width: 77%;
-        float: left;
-        padding: 5px:
-    }
-</style>
+    <script>
+        // directions
+    </script>
+    
+    <style>
+        body {
+            background-color: #eeeeee;
+        }
+        h1 {
+            font-family: "Trebuchet MS";
+            color: black;
+            text-align: center;
+        }
+        p {
+            font-family: "Trebuchet MS";
+            font-size: 14px;
+            text-align: center;
+        }
+        #sidebar {
+            position:absolute;
+            top: 35%;
+            left: 5px;
+            line-height: 20px;
+            height: 50%;
+            width: 20%;
+            min-width: 275px;
+            float: left;
+            padding: 5px;
+        }
+        #googleMap {
+            position: absolute;
+            top: 5px;
+            left: 300px;
+            height: 98vh;
+            width: 77%;
+            float: left;
+            padding: 5px:
+        }
+    </style>
 </head>
 
 <body>
-        <div id="googleMap"></div>
+    <div id="googleMap"></div>
 
-        <div id="sidebar">
-            <h1>TripCaster</h1>
-            <form onsubmit="directions">
-                <p>Starting point: <input type="text" name="Start"><br></p>
-                <p>Destination: <input type="text" name="Finish"><br></p>
-                <p><input type="submit" value="Submit"></p>
-            </form>
-        </div>
-
+    <div id="sidebar">
+        <h1>TripCaster</h1>
+        <form onsubmit="directions">
+            <p>Starting point: <input type="text" name="Start"><br></p>
+            <p>Destination: <input type="text" name="Finish"><br></p>
+            <p><input type="submit" value="Submit"></p>
+        </form>
+    </div>
 </body>
+    
 </html>
