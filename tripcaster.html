@@ -48,12 +48,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
         padding: 5px;
     }
     #googleMap {
+        position: static;
+        top: 0px;
+        left: 300px;
         height: 97vh;
         width: 78%;
-        min-width: 275px;
-        max-width: screen.width - 275px;
-        float: right;
-        padding: 5px;
+        /*min-width: px;*/
+        /*max-width: screen.width - 275px;*/
+        /*float: left;*/
+        /*padding: 5px;*/
     }
 </style>
 
@@ -61,12 +64,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <body>
 
-  <div id="container" style="position:relative;">
+  <!-- <div id="container" style="position:relative;"> -->
 
       <div id="googleMap"></div>
 
-
-      <div id="sidebar" style="position:absolute; top:0; left:0;">
+      <div id="sidebar" style="position:fixed; top:0; left:0;">
             <h1>TripCaster</h1>
             <form onsubmit="directions">
                 <p>Starting point: <input type="text" name="Start"><br></p>
@@ -76,7 +78,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </div>
 
 
-  </div>
+  <!-- </div> -->
 
 
 
