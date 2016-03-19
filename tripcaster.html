@@ -7,20 +7,21 @@ src="http://maps.googleapis.com/maps/api/js">
 
 <script>
 var myCenter=new google.maps.LatLng(40.1947, -92.5833);
+    
 function initialize()
 {
-var mapProp = {
-  center:myCenter,
-  // float:right,
-  zoom:5,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker=new google.maps.Marker({
-  position:myCenter,
-  });
-marker.setMap(map);
+    var mapProp = {
+      center:myCenter,
+      zoom:5,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker=new google.maps.Marker({
+      position:myCenter,
+      });
+    marker.setMap(map);
 }
+    
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
@@ -39,6 +40,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
         text-align: center;
     }
     #sidebar {
+        position:absolute;
+        top:0; 
+        left:0;
         line-height: 20px;
         background-color: #eeeeee;
         height: 97vh;
@@ -64,11 +68,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <body>
 
+<<<<<<< HEAD
   <!-- <div id="container" style="position:relative;"> -->
+=======
+    <div id="container" style="position:relative;">
+>>>>>>> origin/master
 
-      <div id="googleMap"></div>
+        <div id="googleMap"></div>
 
+<<<<<<< HEAD
       <div id="sidebar" style="position:fixed; top:0; left:0;">
+=======
+        <div id="sidebar">
+>>>>>>> origin/master
             <h1>TripCaster</h1>
             <form onsubmit="directions">
                 <p>Starting point: <input type="text" name="Start"><br></p>
@@ -76,11 +88,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 <p><input type="submit" value="Submit"></p>
             </form>
         </div>
+<<<<<<< HEAD
 
 
   <!-- </div> -->
 
 
 
+=======
+        
+    </div>
+>>>>>>> origin/master
 </body>
 </html>
