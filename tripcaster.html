@@ -5,15 +5,6 @@
     
 <style>
     
-    #sidebar {
-        line-height: 30px;
-        background-color: #eeeeee;
-        height: screen.height;
-        width: screen.width * 20%;
-        float: left;
-        padding: 5px;
-    }
-    
     body {
         background-color: #fbfbfb;
     }
@@ -28,6 +19,16 @@
         font-family: "Arial";
         font-size: 14px;
         text-align: center;
+    }
+    
+    #sidebar {
+        line-height: 20px;
+        background-color: #eeeeee;
+        height: 100vh;
+        width: 20%;
+        min-width: 275px;
+        float: left;
+        padding: 5px;
     }
 </style>
     
@@ -46,7 +47,7 @@
         </form>
     </div>
 
-        <div id='map'></div>
+    <div id='map'></div>
 
     <script src="http://openlayers.org/api/OpenLayers.js">
       var map = new ol.Map({
