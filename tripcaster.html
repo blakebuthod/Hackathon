@@ -7,7 +7,6 @@ src="http://maps.googleapis.com/maps/api/js">
 
 <script>
 var myCenter=new google.maps.LatLng(40.1947, -92.5833);
-
 function initialize()
 {
 var mapProp = {
@@ -16,59 +15,29 @@ var mapProp = {
   zoom:5,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
-
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-<<<<<<< HEAD
-=======
-var directionsService = new google.maps.DirectionsService;
-var directionsDisplay = new google.maps.DirectionsRenderer;
->>>>>>> origin/master
-
 var marker=new google.maps.Marker({
   position:myCenter,
   });
-
 marker.setMap(map);
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);
-<<<<<<< HEAD
-=======
-    
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-  directionsService.route({
-    origin: document.getElementById('Start').value,
-    destination: document.getElementById('End').value,
-    travelMode: google.maps.TravelMode.DRIVING
-  }, function(response, status) {
-    if (status === google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-    } else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
-
->>>>>>> origin/master
 </script>
 
 <style>
-
     body {
         background-color: #fbfbfb;
     }
-
     h1 {
         font-family: "Arial";
         color: black;
         text-align: center;
     }
-
     p {
         font-family: "Arial";
         font-size: 14px;
         text-align: center;
     }
-
     #sidebar {
         line-height: 20px;
         background-color: #eeeeee;
@@ -78,11 +47,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         float: left;
         padding: 5px;
     }
-
     #googleMap {
         height: 97vh;
         width: 78%;
         min-width: 275px;
+        max-width: screen.width - 275px;
         float: right;
         padding: 5px;
     }
@@ -92,11 +61,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 <body>
 
-<<<<<<< HEAD
-  <div id="container" style="position:relative; top:5; left:278;">
-=======
   <div id="container" style="position:relative;">
->>>>>>> origin/master
 
       <div id="googleMap"></div>
 
@@ -113,19 +78,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
   </div>
 
-<<<<<<< HEAD
 
-=======
-    <!-- get and display directions
-    
-    get turns, turn into lat/long
-    
-    get weather for turns -->
-    
-    <script>                          
-        //https://api.forecast.io/forecast/8352f056d6d3278e2bfb0817915a4636/LATITUDE,LONGITUDE,TIME,exclude=[minutely,hourly,daily,flags]
-    </script>
->>>>>>> origin/master
 
 </body>
 </html>
