@@ -37,8 +37,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
     
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
-    origin: document.getElementById('start').value,
-    destination: document.getElementById('end').value,
+    origin: document.getElementById('Start').value,
+    destination: document.getElementById('End').value,
     travelMode: google.maps.TravelMode.DRIVING
   }, function(response, status) {
     if (status === google.maps.DirectionsStatus.OK) {
