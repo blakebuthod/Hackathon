@@ -18,6 +18,11 @@ var mapProp = {
   };
 
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+<<<<<<< HEAD
+=======
+var directionsService = new google.maps.DirectionsService;
+var directionsDisplay = new google.maps.DirectionsRenderer;
+>>>>>>> origin/master
 
 var marker=new google.maps.Marker({
   position:myCenter,
@@ -27,6 +32,23 @@ marker.setMap(map);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+<<<<<<< HEAD
+=======
+    
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
+    travelMode: google.maps.TravelMode.DRIVING
+  }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+
+>>>>>>> origin/master
 </script>
 
 <style>
@@ -70,7 +92,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <body>
 
+<<<<<<< HEAD
   <div id="container" style="position:relative; top:5; left:278;">
+=======
+  <div id="container" style="position:relative;">
+>>>>>>> origin/master
 
       <div id="googleMap"></div>
 
@@ -87,7 +113,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
   </div>
 
+<<<<<<< HEAD
 
+=======
+    <!-- get and display directions
+    
+    get turns, turn into lat/long
+    
+    get weather for turns -->
+    
+    <script>                          
+        //https://api.forecast.io/forecast/8352f056d6d3278e2bfb0817915a4636/LATITUDE,LONGITUDE,TIME,exclude=[minutely,hourly,daily,flags]
+    </script>
+>>>>>>> origin/master
 
 </body>
 </html>
