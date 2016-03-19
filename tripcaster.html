@@ -1,5 +1,3 @@
-http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID={fbbe929965351848ab3fc3f66af22df1}
-
 <!DOCTYPE html>
 <html>
     
@@ -7,21 +5,30 @@ http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID={fbbe929965
     
 <style>
     
-body {
-    background-color: #fbfbfb;
-}
+    #sidebar {
+        line-height: 30px;
+        background-color: #eeeeee;
+        height: screen.height;
+        width: screen.width * 20%;
+        float: left;
+        padding: 5px;
+    }
+    
+    body {
+        background-color: #fbfbfb;
+    }
 
-h1 {
-    font-family: "Arial";
-    color: black;
-    text-align: center;
-}
+    h1 {
+        font-family: "Arial";
+        color: black;
+        text-align: center;
+    }
 
-p {
-    font-family: "Arial";
-    font-size: 14px;
-    text-align: center;
-}
+    p {
+        font-family: "Arial";
+        font-size: 14px;
+        text-align: center;
+    }
 </style>
     
 </head>
@@ -29,13 +36,15 @@ p {
 <main>
       
 <body>
-
-  <h1>TripCaster</h1>    
-        <form action="demo_form.asp">
+    
+    <div id="sidebar">
+        <h1>TripCaster</h1>    
+        <form onsubmit="directions">
             <p>Starting point: <input type="text" name="Start"><br></p>
             <p>Destination: <input type="text" name="Finish"><br></p>
             <p><input type="submit" value="Submit"></p>
         </form>
+    </div>
 
         <div id='map'></div>
 
@@ -66,12 +75,15 @@ p {
       map.addLayer(layer_precipitation);
     </script>
     
-    // get and display directions
     
-    // get turns, turn into lat/long
+    <!-- get and display directions
     
-    // get weather for turns
+    get turns, turn into lat/long
+    
+    get weather for turns -->
+    
     <script>
+        //http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID={fbbe929965351848ab3fc3f66af22df1}
         //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
     </script>
 
