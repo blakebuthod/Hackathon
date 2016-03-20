@@ -124,9 +124,7 @@
         
         <div id="left-panel">
             <h1>TripCast</h1>
-            <script>
-                
-            </script>
+            <div id="weather"></div>
         </div>
 
 
@@ -167,6 +165,7 @@
                 if (status === google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
                     retrieveLatandLong(response);
+//                    displayWeather();
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
@@ -174,17 +173,39 @@
           
         
       }
-    function retrieveLatandLong(directionResult)
-          {
-              var myRoute = directionResult.routes[0].legs[0];
-              for(var i = 0; i < steps.length; i++) {
-                  currentStep = steps[i];
-                  latitudes[i] = currentStep.endLocation().lat();
-                  longitudes[i] = currentStep.endLocation().log();
-                  times[i] = currentStep.duration.value + times[i-1];
-              }
+        function retrieveLatandLong(directionResult)
+        {
+            var myRoute = directionResult.routes[0].legs[0];
+            for(var i = 0; i < steps.length; i++) {
+                currentStep = steps[i];
+                latitudes[i] = currentStep.endLocation().lat();
+                longitudes[i] = currentStep.endLocation().log();
+                times[i] = currentStep.duration.value + times[i-1];
+            }
           }
+        
+        /*function displayWeather()
+        {
+            for (i = 0; i < longitudes.length; i++) { 
+                $.simpleWeather({
+                    location: latitudes[i] + ", " longitudes[i],
+                    unit: 'f',
+                    success: function(weather) {
+                        div.weather = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+                        div.weather += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+                        div.weather += '<li class="currently">'+weather.currently+'</li>';
+                        div.weather += '<li>'+weather.alt.temp+'&deg;C</li></ul>';
+
+                        $("#weather").html(html);
+                        },
+                    error: function(error) {
+                        ("#weather").html('<p>'+error+'</p>');
+                    }
+                });
+            }
+        }*/
     </script>
+
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCko9OQT_O2a8JytgbzoG_6b5rmG4r1Wzo&callback=initMap">
     </script>
