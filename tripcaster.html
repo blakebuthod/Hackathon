@@ -63,17 +63,17 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
         
-        function directions(form)
+        function calcRoute(form)
         {
             var start = form.Start.value;
             var finish = form.Finish.value;
-
-            window.alert(start);
-            var request = {
-                origin:start,
-                destination:end,
+            var request = new google.maps.DirectionsRequest();
+            request = {
+                origin: start,
+                destination: end,
                 travelMode: google.maps.TravelMode.DRIVING
             };
+            window.alert("GAH");
             directionServices.route(request, function(status, results)
             {
                 if (status == google.maps.DirectionsStatus.OK) {
@@ -134,7 +134,7 @@
         <form name="tripform">
             <p>Starting point: <input type="text" name="Start"><br></p>
             <p>Destination: <input type="text" name="Finish"><br></p>
-            <p><input type="button" value="Submit" onClick="directions(this.form)"></p>
+            <p><input type="button" value="Submit" onClick="calcRoute(this.form)"></p>
         </form>
         
     </div>
