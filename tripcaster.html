@@ -31,24 +31,24 @@
             line-height: 30px;
             padding-left: 10px;
         }
-        #right-panel {
+        #left-panel {
             font-family: 'Roboto','sans-serif';
             line-height: 30px;
             padding-left: 10px;
         }
 
-        #right-panel select, #right-panel input {
+        #left-panel select, #right-panel input {
             font-size: 15px;
         }
 
-        #right-panel select {
+        #left-panel select {
             width: 100%;
         }
 
-        #right-panel i {
+        #left-panel i {
             font-size: 12px;
         }
-        #right-panel {
+        #left-panel {
             height: 100%;
             float: left;
             width: 390px;
@@ -71,25 +71,65 @@
                 height: 500px;
                 margin: 0;
             }
-            #right-panel {
+            #left-panel {
                 float: none;
                 width: auto;
             }
+        }
+        .weather {
+            width: 425px;
+            margin: 0px auto;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .weather h2 {
+            margin: 0 0 8px;
+            color: #fff;
+            font-size: 150px;
+            font-weight: 300;
+            text-align: center;
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+        }
+        .weather ul {
+            margin: 0;
+            padding: 0;
+        }
+        .weather li {
+            background: #fff;
+            background: rgba(255,255,255,0.90);
+            padding: 20px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .weather .currently {
+            margin: 0 20px;
+        }
+
+        #weather2 {
+            border-top: 2px solid #1A8BC4;
+            margin-top: 45px;
         }
     </style>
     </head>
     
     <body>
-    <div id="floating-panel">
-      <strong>Start:</strong>
-        <input type="text" id="Start"><br>
-        <strong>End:</strong>
-        <input type="text" id="Finish"><br>
-        <strong><input type="button" value="Submit" onClick="calculateAndDisplayRoute()" id="Submit"></strong>
-      </div>
-    <div id="right-panel">
-        <h1>TripCaster</h1>
-    </div>
+        <div id="floating-panel">
+            <strong>Start:</strong>
+            <input type="text" id="Start"><br>
+            <strong>End:</strong>
+            <input type="text" id="Finish"><br>
+            <strong><input type="button" value="Submit" onClick="calculateAndDisplayRoute()" id="Submit"></strong>
+        </div>
+        
+        <div id="left-panel">
+            <h1>TripCast</h1>
+            <script>
+                
+            </script>
+        </div>
+
+
     <div id="map"></div>
     <script>
       function initMap() {
@@ -100,7 +140,7 @@
           center: {lat: 41.85, lng: -87.65}
         });
         directionsDisplay.setMap(map);
-        directionsDisplay.setPanel(document.getElementById('right-panel'));
+        directionsDisplay.setPanel(document.getElementById('left-panel'));
 
         var control = document.getElementById('floating-panel');
         control.style.display = 'block';
@@ -129,7 +169,7 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCko9OQT_O2a8JytgbzoG_6b5rmG4r1Wzo&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCko9OQT_O2a8JytgbzoG_6b5rmG4r1Wzo&callback=initMap">
     </script>
   </body>
 </html>
