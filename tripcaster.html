@@ -2,49 +2,6 @@
 <html>
 <head>
 
-<script>
-var myCenter=new google.maps.LatLng(40.1947, -92.5833);
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService;
-
-function initialize()
-{
-    directionsDisplay = new google.maps.DirectionsRenderer();
-    var mapProp = {
-      center:myCenter,
-      zoom:5,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    var marker=new google.maps.Marker({
-      position:myCenter,
-      });
-    marker.setMap(map);
-    directionsDisplay.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-    
-function directions()
-{
-    var start = document.getElementByID("Start").value;
-    var finish = document.getElementByID("Finish").value;
-    
-    var request = {
-        origin:start,
-        destination:end,
-        travelMode: google.maps.TravelMode.DRIVING
-    };
-    directionServices.route(request, function(status, results)
-    {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(result);
-        }
-    });
-}
-</script>
-
-
 <style>
     body {
         background-color: #fbfbfb;
@@ -85,9 +42,12 @@ function directions()
 
     <script>
         var myCenter=new google.maps.LatLng(40.1947, -92.5833);
+        var directionsDisplay;
+        var directionsService = new google.maps.DirectionsService;
 
         function initialize()
         {
+            directionsDisplay = new google.maps.DirectionsRenderer();
             var mapProp = {
                 center:myCenter,
                 zoom:5,
@@ -97,10 +57,30 @@ function directions()
             var marker=new google.maps.Marker({
                 position:myCenter,
             });
+            directionsDisplay.setMap(map);
         marker.setMap(map);
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
+        
+        function directions(form)
+        {
+            var start = form.Start.value;
+            var finish = form.Finish.value;
+
+            window.alert(start);
+            var request = {
+                origin:start,
+                destination:end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionServices.route(request, function(status, results)
+            {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(result);
+                }
+            });
+        }
     </script>
 
     <script>
@@ -151,11 +131,12 @@ function directions()
 
     <div id="sidebar">
         <h1>TripCaster</h1>
-        <form onsubmit="directions">
+        <form name="tripform">
             <p>Starting point: <input type="text" name="Start"><br></p>
             <p>Destination: <input type="text" name="Finish"><br></p>
-            <p><input type="submit" value="Submit"></p>
+            <p><input type="button" value="Submit" onClick="directions(this.form)"></p>
         </form>
+        
     </div>
 </body>
     
