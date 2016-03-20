@@ -4,6 +4,101 @@
 <meta name="viewport" content="initial-scale=1.0">
 <meta charset="utf-8">
 
+<<<<<<< HEAD
+<style>
+    body {
+        background-color: #fbfbfb;
+    }
+    h1 {
+        font-family: "Trebuchet MS";
+        color: black;
+        text-align: center;
+    }
+    p {
+        font-family: "Trebuchet MS";
+        font-size: 14px;
+        text-align: center;
+    }
+    #sidebar {
+        position:absolute;
+        top: 5px;
+        left: 5px;
+        line-height: 20px;
+        background-color: #eeeeee;
+        height: 97vh;
+        width: 20%;
+        min-width: 275px;
+        float: left;
+        padding: 5px;
+    }
+    #googleMap {
+        position: absolute;
+        top: 5px;
+        left: 300px;
+        height: 98vh;
+        width: 77%;
+        float: left;
+        padding: 5px:
+    }
+</style>
+    <script src="http://maps.googleapis.com/maps/api/js" src="//cdn.aerisjs.com/aeris.js"></script>
+
+    <script>
+        aeris.config.setApiId('gkoLqiNpvlCoJL4r9cAWc');
+        aeris.config.setApiSecret('w78cCZvLYQYCUdPcHi0VwfldBtkMzkVIYNn3ub1y');
+        
+        var myCenter=new google.maps.LatLng(40.1947, -92.5833);
+        var directionsDisplay;
+        var directionsService = new google.maps.DirectionsService;
+
+        function initialize()
+        {
+            directionsDisplay = new google.maps.DirectionsRenderer();
+            var mapProp = {
+                center:myCenter,
+                zoom:5,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker=new google.maps.Marker({
+                position:myCenter,
+            });
+            directionsDisplay.setMap(map);
+            var weathermap = new aeris.maps.Map(map);
+            var radar = new aeris.maps.layers.Radar();
+            radar.setMap(myAerisMap);
+            marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+        
+        function calcRoute(directionsSerivce, directionsDisplay, form)
+        {
+            var start = form.Start.value;
+            var finish = form.Finish.value;
+            var request = new google.maps.DirectionsRequest();
+            request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            window.alert("GAH");
+            directionServices.route(request, function(status, results)
+            {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(result);
+                }
+            });
+        }
+    </script>
+
+    <script type="text/javascript" src="//cdn.aerisjs.com/aeris.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+    
+=======
+>>>>>>> refs/remotes/origin/map/directions
     <style>
         html, body {
             background-color: #eeeeee;
@@ -57,7 +152,27 @@
             padding-left: 10px;
         }
     </style>
+<<<<<<< HEAD
+
+</head>
+
+<body>
+    <div id="googleMap"></div>
+
+    <div id="sidebar">
+        <h1>TripCaster</h1>
+        <form name="tripform">
+            <p>Starting point: <input type="text" name="Start"><br></p>
+            <p>Destination: <input type="text" name="Finish"><br></p>
+            <p><input type="button" value="Submit" onClick="calcRoute(this.form)"></p>
+        </form>
+        <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=40.1947&lon=-92.5833&name=Truman"> </iframe> 
+    </div>
+    
+</body>
+=======
     </head>
+>>>>>>> refs/remotes/origin/map/directions
     
     <body>
       
