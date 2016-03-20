@@ -125,18 +125,18 @@
             function(response, status) {
                 if (status === google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
-                    directions = response;
+                    retrieveLatandLong(response);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
             });    
       }
         
-    function retrieveLatandLong(directions)
+    function retrieveLatandLong(directionResult)
           {
-              var locations = new google.maps.DirectionsStep[];
               var time = 0;
-              var steps = directions.routes[0].legs[0].steps[];
+              var myRoute = directionResult.routes[0].legs[0];
+              var locations = [];
               for(var i = 0; i < steps.length; i++) {
                   currentStep = steps[i];
                   locations[i] = currentStep.endLocation();
