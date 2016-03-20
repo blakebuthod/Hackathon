@@ -93,12 +93,12 @@
     <div id="map"></div>
     <script>
       function initMap() {
-          var directionsDisplay = new google.maps.DirectionsRenderer;
-          var directionsService = new google.maps.DirectionsService;
-            var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 7,
-            center: {lat: 41.85, lng: -87.65}
-            });
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+            var directionsService = new google.maps.DirectionsService;
+          var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 41.85, lng: -87.65}
+        });
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById('right-panel'));
 
@@ -109,9 +109,10 @@
         var onChangeHandler = function() {
             calculateAndDisplayRoute(directionsService, directionsDisplay);
         };
-          
-        var directions = new google.maps.DirectionsResult;
-        document.getElementById('Submit').addEventListener('click', onChangeHandler);
+          document.getElementById('Submit').addEventListener('click', onChangeHandler);
+          var times = [];
+          var longitudes = [];
+          var latitudes = [];
       }
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -129,18 +130,18 @@
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
-            });    
-      }
+      });
+          
         
+      }
     function retrieveLatandLong(directionResult)
           {
-              var time = 0;
               var myRoute = directionResult.routes[0].legs[0];
-              var locations = [];
               for(var i = 0; i < steps.length; i++) {
                   currentStep = steps[i];
-                  locations[i] = currentStep.endLocation();
-                  time += currentStep.duration.value;
+                  latitudes[i] = currentStep.endLocation().lat();
+                  longitudes[i] = currentStep.endLocation().log();
+                  times[i] = currentStep.duration.value + times[i-1];
               }
           }
     </script>
